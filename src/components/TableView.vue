@@ -1,15 +1,5 @@
 <template>
 <div>
-   <router-link :to="'/'" exact style="text-decoration: none; color: inherit;">
-                
-          <v-btn v-bind="attrs" v-on="on" class="ma-1" large color="#000000" plain>
-                <v-icon>
-                    mdi-arrow-left
-                </v-icon>
-                  На главную
-            </v-btn>
-
-         </router-link>
     <v-card>
     <v-card-title>
       <v-text-field
@@ -21,6 +11,8 @@
       ></v-text-field>
     </v-card-title>
     <v-data-table
+       @dblclick:row="editItem(item, $event )"
+       @click:row="editItem(item, $event )"
       :headers="headers"
       :items="desserts"
       :search="search"
@@ -30,6 +22,9 @@
 </template>
 
 <script>
+import { router } from '../router';
+
+
   export default {
     name: 'TableView',
 
@@ -132,5 +127,19 @@
         ]
       
     }),
+    methods: {
+      editItem () {
+        // console.log(item)
+        // this.editedIndex = this.items.indexOf(item)
+        // this.editedItem = Object.assign({}, item)
+        // this.dialog = true
+        router.replace({ path: '/tabledetails' })
+        console.log("пшееел нахуй")
+      },
+      clickEvent(event) {
+        console.log('clicked')
+        console.log('event', event)
+      }
+    }
   }
 </script>

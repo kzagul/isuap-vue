@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Table from './pages/TablePage.vue';
+import TableItemDetails from './pages/TableItemDetails.vue';
 import Home from './pages/HomePage.vue';
 import LoginPage from './pages/LoginPage.vue';
 // import Register from './views/Register.vue';
@@ -13,7 +14,7 @@ export const router = new Router({
     {
         path: '/',
         name: 'Home',
-        redirect: "/login",
+        // redirect: "/login",
         component: Home
     },
     {
@@ -21,6 +22,11 @@ export const router = new Router({
         name: 'Table',
         component: Table
     },
+    {
+      path: '/tabledetails',
+      name: 'TableItemDetails',
+      component: TableItemDetails
+  },
     {
         path: '/login',
         name: 'Login',

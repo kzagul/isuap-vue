@@ -43,8 +43,9 @@
                      <v-card-actions>
                         <v-spacer></v-spacer>
                         <!-- red darken-1 -->
-                        <v-btn class=" red--text text--darken-1" to="/">
-                            <v-icon class="pr-1" color="deep-orange accent-3" large>mdi-login-variant</v-icon>
+                        <!-- class=" red--text text--darken-1"  -->
+                        <v-btn color="amber lighten-2" to="/">
+                            <v-icon class="pr-1" color="deep-orange accent-3"  large>mdi-login-variant</v-icon>
                             Войти
                         </v-btn>
                      </v-card-actions>
