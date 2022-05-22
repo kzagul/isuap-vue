@@ -24,6 +24,7 @@
                             <v-row>
                                 <v-icon class="pl-3 pr-3" color="deep-orange accent-3">mdi-account</v-icon>
                                 <v-text-field
+                                    v-model="username"
                                     name="login"
                                     label="Логин"
                                     type="text"
@@ -32,6 +33,7 @@
                             <v-row>
                                 <v-icon class="pl-3 pr-3" color="deep-orange accent-3">mdi-lock</v-icon>
                                 <v-text-field
+                                    v-model="password"
                                     id="password"
                                     name="password"
                                     label="Пароль"
@@ -44,7 +46,7 @@
                         <v-spacer></v-spacer>
                         <!-- red darken-1 -->
                         <!-- class=" red--text text--darken-1"  -->
-                        <v-btn color="amber lighten-2" to="/">
+                        <v-btn @click="signIn" color="amber lighten-2" >
                             <v-icon class="pr-1" color="deep-orange accent-3"  large>mdi-login-variant</v-icon>
                             Войти
                         </v-btn>
@@ -58,11 +60,29 @@
 </template>
 
 <script>
+import { router } from '../router';
 export default {
+
+   data: () => ({
+
+      username: '',
+      password: ''
+
+   }),
 
    props: {
       source: String,
    },
+
+   methods: {
+      signIn() {
+         if (this.username === 'admin' && this.password === 'admin'){
+             router.replace({ path: '/' })
+         }
+         // username = 'admin',
+         // password = 'admin'
+      } 
+   }
 };
 </script>
 
