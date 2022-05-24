@@ -1,33 +1,28 @@
 <template>
-    <v-app-bar
-      app
-      color="amber lighten-2"
-      dark
-    >
-      <div class="d-flex align-center">
-        <router-link :to="'/'" exact>
-          <v-img
-            contain
-            alt="Vuetify Logo"
-            class="shrink mr-2"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/1C_Company_logo.svg/2560px-1C_Company_logo.svg.png"
-            transition="scale-transition"
-            width="40"
-          />
-        </router-link>
-      </div>
+  <v-app-bar app color="amber lighten-2" dark>
+    <div class="d-flex align-center">
+      <router-link :to="'/'" exact>
+        <v-img
+          contain
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/1C_Company_logo.svg/2560px-1C_Company_logo.svg.png"
+          transition="scale-transition"
+          width="40"
+        />
+      </router-link>
+    </div>
 
-      <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
 
-      <v-btn text>
-        <v-icon color="deep-orange accent-3">mdi-basket</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <v-btn text>
+      <v-icon color="deep-orange accent-3">mdi-basket</v-icon>
+    </v-btn>
+  </v-app-bar>
 </template>
-
 
 <script>
 export default {
-   name: 'NavBar',
-}
+  name: "NavBar",
+};
 </script>
